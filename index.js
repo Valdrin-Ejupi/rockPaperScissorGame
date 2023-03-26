@@ -317,8 +317,8 @@ guessingGame = {
   },
   _responsive: () => {
     if (window.innerWidth < 576) {
-      document.querySelector('.container').style.width = '576px';
-document.querySelector('.container').classList.add('mx-2');
+      document.querySelector('.container').style.width = 'auto';
+document.querySelector('.container').classList.add('mx-4');
       var secondSection = document.querySelector('#secondSection');
       var thirdSection = document.querySelector('#thirdSection');
       secondSection.classList.remove('justify-content-between');
