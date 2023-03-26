@@ -12,12 +12,13 @@
   </head>
   <body>
     <div
-      class="container-sm d-flex flex-wrap align-items-center flex-row bd-highlight border border-primary p-5 my-2"
+      class="container d-lg-flex flex-wrap align-items-center bd-highlight border border-primary p-5 my-2"
       style="height: 800x; width: 960px"
     >
       <div
         class="d-flex justify-content-between border border-secondary p-3"
         style="width: 100%"
+        id="firstSection"
       >
         <p class="fs-5 fw-bold">Game: <span id="numOfGames">0</span></p>
 
@@ -26,6 +27,7 @@
       <div
         class="d-flex justify-content-between align-items-center"
         style="width: 100%"
+        id="secondSection"
       >
         <div class="text-center" id="firstUserContainer">
           <p class="firstPlayerResult fs-1 fw-bold">0</p>
@@ -55,7 +57,7 @@
       </div>
       <div
         class="d-flex justify-content-between align-items-center"
-        style="width: 100%"
+        style="width: 100%" id="thirdSection"
       >
         <div class="d-flex flex-column firstUserInfo">
           <input class="my-4" type="text" placeholder="Username" required />
