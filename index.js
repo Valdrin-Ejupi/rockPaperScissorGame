@@ -314,7 +314,17 @@ guessingGame = {
       },
       true
     );
+  },  _responsive: () => {
+    if (window.innerWidth < 576) {
+      var secondSection = document.querySelector('#secondSection');
+      var thirdSection = document.querySelector('#thirdSection');
+      secondSection.classList.remove('justify-content-between');
+      secondSection.classList.add('flex-column');
+      thirdSection.classList.remove('justify-content-between');
+      thirdSection.classList.add('flex-column');
+    }
   },
 };
 guessingGame._startTheGame();
 guessingGame._resetGame();
+guessingGame._responsive();
