@@ -9,6 +9,11 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
     <style>
       .secUserInfo input:valid,
       .firstUserInfo input:valid {
@@ -21,6 +26,73 @@
     </style>
   </head>
   <body>
+    <!-- Rules of the Game -->
+    <section class="modal fade" tabindex="-1" id="gameRules">
+      <div class="modal-dialog modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-header justify-content-center">
+            <h4>Rules of the Game:</h4>
+          </div>
+          <div class="modal-body">
+            <ol>
+              <li>
+                This game can be played in two modes: Player vs Computer or
+                Player vs Player!
+              </li>
+
+              <li>
+                Each player must first fill the username which can contain only
+                small or big letters on the range of [3,16] letters.
+              </li>
+              <li>
+                Player must select the mode of the game that they want to play
+                against each other!
+                <ul>
+                  <li>
+                    <strong>Best of 3: </strong>There will be exatly 3 winning
+                    games(Draws doesn't count as winning game), "Best of 5" and
+                    "Best of 9" are similiar.
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                After each winning game the game counter on top-left will
+                increment(This means for draws will not).
+              </li>
+              <li>
+                After on or other player wins, it's name will be highlight with
+                a red for losing and green for winning and the game will be
+                reset after 2 seconds automatically.
+              </li>
+              <li>
+                The Reset Buton can be used at any time the player wants to
+                reset the game.
+              </li>
+
+              <li>Choose below the mode of the game: Enjoy &#128522;</li>
+            </ol>
+            <div class="d-flex flex-column align-items-center">
+              <button
+                class="btn btn-primary"
+                id="playerVsComputer"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                Player vs Computer</button
+              ><button
+                class="btn btn-primary mt-1"
+                id="playerVsPlayer"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                Player vs Player
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <div
       class="container d-lg-flex flex-wrap align-items-center bd-highlight border border-primary p-5 my-2"
       style="width: 960px"
@@ -64,7 +136,7 @@
             height="300px"
             class="img-fluid"
           />
-          <p id="secondUserName" class="text-cente fs-2">Player B</p>
+          <p id="secondUserName" class="text-cente fs-2">Computer</p>
         </div>
       </div>
       <div
@@ -80,13 +152,15 @@
             pattern="[A-Za-z]{3,16}"
             required
           />
-          <button class="btn btn-primary">Generate</button>
+          <button class="btn btn-primary mt-1">Rock</button>
+          <button class="btn btn-primary mt-1">Paper</button>
+          <button class="btn btn-primary mt-1">Scissor</button>
         </div>
-        <div class="d-flex flex-column">
+        <div class="d-flex flex-column text-center">
           <div class="my-3" id="gameMode">
-            <label for="choose">Choose game mode:</label>
+            <label class="p" for="choose">Choose game mode:</label>
             <label
-              id="chooseGameMode"
+              id="selectChoisesTooltip"
               style="color: red; font-size: 16px"
             ></label
             ><br />
@@ -96,16 +170,6 @@
           </div>
 
           <button class="btn btn-primary" id="startGame">Start</button>
-        </div>
-        <div class="d-flex flex-column secUserInfo">
-          <input
-            class="my-3 form-control shadow-none"
-            type="text"
-            placeholder="Username"
-            pattern="[A-Za-z]{3,16}"
-            required
-          />
-          <button class="btn btn-primary">Generate</button>
         </div>
       </div>
     </div>
