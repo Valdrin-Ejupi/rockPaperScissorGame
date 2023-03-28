@@ -318,7 +318,6 @@ guessingGame = {
   _responsive: () => {
     if (window.innerWidth < 576) {
       document.querySelector('.container').style.width = '576px';
-      document.querySelector('.container').classList.add('mx-2');
       var secondSection = document.querySelector('#secondSection');
       var thirdSection = document.querySelector('#thirdSection');
       secondSection.classList.remove('justify-content-between');
@@ -327,9 +326,15 @@ guessingGame = {
       thirdSection.classList.add('flex-column');
     }
   },
-  _validation: () => {},
 };
 guessingGame._startTheGame();
 guessingGame._resetGame();
 guessingGame._responsive();
-guessingGame._validation();
+
+const myModal = new bootstrap.Modal('#gameRules', {
+  backdrop: 'static',
+  keyboard: false,
+});
+window.addEventListener('DOMContentLoaded', () => {
+  myModal.show();
+});
