@@ -7,7 +7,6 @@ const rockPaperScissor = {
   secondUserContainer: document.querySelector('#secondUserContainer'),
   images: ['rock.png', 'paper.png', 'scissor.png'],
   _showModal: () => {
-    debugger;
     var myModal = new bootstrap.Modal('#gameRules', {
       backdrop: 'static',
       keyboard: false,
