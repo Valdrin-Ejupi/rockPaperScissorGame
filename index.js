@@ -18,16 +18,9 @@ const rockPaperScissor = {
 
     var modal = document.querySelector('.modal');
     modal.addEventListener('click', (e) => {
-      if (e.delegateTarget.closest('#playerVsPlayer')) {
-        rockPaperScissor.playerVsPlayer = true;
-
-        rockPaperScissor._playerVsPlayer();
-      } else if (e.delegateTarget.closest('#playerVsComputer')) {
+      if (e.delegateTarget.closest('#playerVsComputer')) {
         rockPaperScissor.playerVsComputer = true;
         rockPaperScissor._playerVsComputer();
-      }
-      if (rockPaperScissor.playerVsPlayer === true) {
-        // we show the buttons
       }
     });
   },
