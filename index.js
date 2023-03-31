@@ -1,3 +1,4 @@
+'use strict'
 const rockPaperScissor = {
   playerVsComputer: false,
   playerVsPlayer: false,
