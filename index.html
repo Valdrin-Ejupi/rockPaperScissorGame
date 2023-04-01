@@ -22,6 +22,14 @@
       .secUserInfo input:invalid,
       .firstUserInfo input:invalid {
         border: 2px solid red !important;
+      /* Responsive */
+      @media (min-width:	767px) {
+          /* we change from row to column*/
+          .container{
+            flex-direction:column;
+            align-items:center;
+          }
+
       }
     </style>
   </head>
@@ -61,7 +69,7 @@
                 increment(This means for draws will not).
               </li>
               <li>
-                After on or other player wins, it's name will be highlight with
+                After you or other player wins, it's name will be highlight with
                 a red for losing and green for winning and the game will be
                 reset after 2 seconds automatically.
               </li>
@@ -96,8 +104,7 @@
       </div>
     </section>
     <div
-      class="container d-lg-flex flex-wrap align-items-center bd-highlight border border-primary p-5 my-2"
-      style="width: 960px"
+      class="container d-flex flex-wrap align-items-center bd-highlight border border-primary p-5 my-2"
     >
       <div
         class="d-flex justify-content-between border border-secondary p-3"
